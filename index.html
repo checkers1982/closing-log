@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shop Closing Log</title>
+<!-- iOS "Add to Home Screen" behaviour -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Closing Up">
+<meta name="theme-color" content="#1b3428">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow column, tabbed (Close up / Log / Settings), big tap targets for a till-side tablet */
+:root{
+  --paper:#f2f5f2; --card:#ffffff; --ink:#1b2420; --muted:#5b6862; --line:#d5ddd8;
+  --brass:#9a6a12; --brass-soft:#f3e7cc; --on-brass:#ffffff;
+  --ok:#2c7549; --ok-soft:#dcefe2; --warn:#9c520a; --warn-soft:#f8e7d3;
+  --bad:#ad3528; --bad-soft:#f7ddd9; --closed:#66716b; --closed-soft:#e6ebe8;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111614; --card:#19201d; --ink:#e5ebe7; --muted:#98a69f; --line:#2b3530;
+  --brass:#dba849; --brass-soft:#3a2f17; --on-brass:#1a1408;
+  --ok:#6cc18d; --ok-soft:#1c3426; --warn:#e69c52; --warn-soft:#3a2a17;
+  --bad:#e67c70; --bad-soft:#3c1f1b; --closed:#9aa59f; --closed-soft:#242c28; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111614; --card:#19201d; --ink:#e5ebe7; --muted:#98a69f; --line:#2b3530;
+  --brass:#dba849; --brass-soft:#3a2f17; --on-brass:#1a1408;
+  --ok:#6cc18d; --ok-soft:#1c3426; --warn:#e69c52; --warn-soft:#3a2a17;
+  --bad:#e67c70; --bad-soft:#3c1f1b; --closed:#9aa59f; --closed-soft:#242c28; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:16px/1.5 var(--f-body);
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-top:calc(20px + env(safe-area-inset-top, 0px));padding-bottom:calc(48px + env(safe-area-inset-bottom, 0px));margin:0;-webkit-text-size-adjust:100%}
+.wrap{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;line-height:1.15}
+h1{font-size:1.9rem;font-weight:700}
+h2{font-size:1.25rem;font-weight:700}
+.eyebrow{font:500 .75rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
+.muted{color:var(--muted)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+
+header.top{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px}
+header.top .when{display:flex;flex-direction:column;gap:6px}
+
+nav.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line)}
+nav.tabs button{background:none;border:0;padding:10px 14px;font-weight:700;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1px}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--brass)}
+
+.panel{display:flex;flex-direction:column;gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:14px}
+
+.pill{display:inline-flex;align-items:center;gap:6px;font:500 .8rem/1 var(--f-mono);padding:6px 10px;border-radius:999px;white-space:nowrap}
+.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.s-complete{background:var(--ok-soft);color:var(--ok)}
+.s-missed{background:var(--bad-soft);color:var(--bad)}
+.s-progress{background:var(--warn-soft);color:var(--warn)}
+.s-notlogged{background:var(--bad-soft);color:var(--bad)}
+.s-closed{background:var(--closed-soft);color:var(--closed)}
+.s-upcoming{background:var(--closed-soft);color:var(--closed)}
+
+.daybar{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.daybar input[type=date]{padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:8px 14px;font-weight:700}
+.btn:hover{border-color:var(--brass)}
+.btn.primary{background:var(--brass);color:var(--on-brass);border-color:var(--brass)}
+.btn.primary:disabled{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:none;border-color:transparent;color:var(--muted)}
+.btn.danger{color:var(--bad)}
+.btn.sm{padding:5px 10px;font-size:.9rem}
+
+.banner{border-radius:var(--r);padding:12px 14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.banner.closed{background:var(--closed-soft)}
+.banner.warn{background:var(--warn-soft);color:var(--ink)}
+.banner.ok{background:var(--ok-soft)}
+
+.progress{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--ok);transition:width .25s}
+
+ul.check{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ul.check li + li{border-top:1px solid var(--line)}
+ul.check label{display:grid;grid-template-columns:30px 1fr auto;gap:12px;align-items:center;padding:12px 4px;cursor:pointer;min-height:52px}
+ul.check input{width:24px;height:24px;accent-color:var(--ok);margin:0}
+ul.check .t{min-width:0}
+ul.check .done .t{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+ul.check .at{font:.8rem var(--f-mono);color:var(--muted)}
+ul.check.locked label{cursor:default}
+
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-weight:700;font-size:.95rem}
+.field input,.field textarea{border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:10px 12px;width:100%}
+.field textarea{min-height:96px;resize:vertical}
+.hint{font-size:.85rem;color:var(--muted)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.signoff{display:flex;flex-direction:column;gap:10px}
+.confirm{background:var(--warn-soft);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:10px}
+
+.monthbar{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.stats{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.9rem;color:var(--muted)}
+.stats b{color:var(--ink);font-family:var(--f-mono)}
+.loglist{display:flex;flex-direction:column}
+.logrow{display:grid;grid-template-columns:92px 1fr auto;gap:12px;align-items:start;padding:12px 4px;border:0;border-top:1px solid var(--line);background:none;text-align:left;width:100%}
+.logrow:first-child{border-top:0}
+.logrow:hover{background:var(--paper)}
+.logrow .d{font-family:var(--f-mono);font-size:.9rem}
+.logrow .d small{display:block;color:var(--muted)}
+.logrow .info{min-width:0;display:flex;flex-direction:column;gap:2px}
+.logrow .note{color:var(--muted);font-size:.9rem;overflow-wrap:anywhere}
+
+.edit-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.edit-list li{display:grid;grid-template-columns:28px 1fr auto;gap:8px;align-items:center}
+.edit-list .n{font:.85rem var(--f-mono);color:var(--muted);text-align:right}
+.edit-list input{border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:8px 10px;width:100%;min-width:0}
+.edit-list .acts{display:flex;gap:2px}
+.iconbtn{border:1px solid transparent;background:none;border-radius:6px;width:34px;height:34px;color:var(--muted)}
+.iconbtn:hover{border-color:var(--line);color:var(--ink)}
+.closure{display:grid;grid-template-columns:130px 1fr auto;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.closure:first-child{border-top:0}
+.empty{color:var(--muted);padding:6px 0}
+
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom, 0px));background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:8px;font-size:.9rem;max-width:calc(100% - 32px)}
+.savestate{font:.8rem var(--f-mono);color:var(--muted)}
+
+@media (max-width:480px){
+  h1{font-size:1.5rem}
+  .logrow{grid-template-columns:72px 1fr}
+  .logrow .pill{grid-column:2;justify-self:start}
+  .closure{grid-template-columns:1fr auto}
+  .closure .reason{grid-column:1}
+}
+body:not(.admin) .admin-only{display:none!important}
+.pin-error{color:var(--bad);font-size:.9rem}
+#pinInput,#pin2Input{font-family:var(--f-mono);letter-spacing:.3em;max-width:200px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="when">
+      <span class="eyebrow">Closing up</span>
+      <h1 id="hdrDate">Loading…</h1>
+    </div>
+    <div class="row"><span id="hdrStatus"></span><button class="btn sm" id="adminBtn" type="button">Admin</button></div>
+  </header>
+
+  <div id="globalNotice" class="banner warn" hidden></div>
+
+  <form class="card" id="adminForm" hidden>
+    <h2 id="adminTitle">Admin access</h2>
+    <p class="hint" id="adminHint" style="margin:0"></p>
+    <div class="field"><label for="pinInput" id="pinLabel">Admin PIN</label><input id="pinInput" type="password" inputmode="numeric" autocomplete="off"></div>
+    <div class="field" id="pin2Field" hidden><label for="pin2Input">Type the new PIN again</label><input id="pin2Input" type="password" inputmode="numeric" autocomplete="off"></div>
+    <div class="row"><button class="btn primary" type="submit" id="pinSubmit">Unlock</button><button class="btn" type="button" id="pinCancel">Cancel</button></div>
+    <span class="pin-error" id="pinError"></span>
+  </form>
+
+  <nav class="tabs admin-only" role="tablist">
+    <button role="tab" id="tab-today" aria-selected="true" data-tab="today">Close up</button>
+    <button role="tab" id="tab-log" aria-selected="false" data-tab="log">Log</button>
+    <button role="tab" id="tab-settings" aria-selected="false" data-tab="settings">Settings</button>
+  </nav>
+
+  <!-- CLOSE UP -->
+  <section class="panel" id="p-today">
+    <div class="daybar">
+      <button class="btn sm admin-only" id="prevDay" aria-label="Previous day">‹</button>
+      <input type="date" class="admin-only" id="pickDate" aria-label="Date being logged">
+      <button class="btn sm admin-only" id="nextDay" aria-label="Next day">›</button>
+      <button class="btn sm ghost admin-only" id="goToday">Today</button>
+      <span class="savestate" id="saveState"></span>
+    </div>
+
+    <div id="missedHint" class="banner warn" hidden></div>
+    <div id="closedBanner" class="banner closed" hidden></div>
+    <div id="signedBanner" class="banner ok" hidden></div>
+
+    <div class="card" id="checkCard">
+      <div class="row" style="justify-content:space-between">
+        <h2>Checklist</h2>
+        <span class="mono muted" id="countLabel"></span>
+      </div>
+      <div class="progress"><i id="progBar" style="width:0"></i></div>
+      <ul class="check" id="checkList"></ul>
+      <p class="empty" id="checkEmpty" hidden>No checklist items yet. Add them under <a href="#" data-goto="settings">Settings</a>.</p>
+    </div>
+
+    <div class="card">
+      <div class="field">
+        <label for="notes">Notes for this day</label>
+        <textarea id="notes" placeholder="Special events, deliveries, anything odd at close…"></textarea>
+        <span class="hint">Saved automatically.</span>
+      </div>
+      <div class="field" id="nameField">
+        <label for="closedBy">Closed by</label>
+        <input id="closedBy" autocomplete="name" placeholder="Your name">
+      </div>
+      <div class="signoff" id="signoffBox">
+        <button class="btn primary" id="signoffBtn">Sign off closing</button>
+        <div class="confirm" id="confirmBox" hidden>
+          <span id="confirmText"></span>
+          <div class="row">
+            <button class="btn primary" id="confirmYes">Yes, sign off</button>
+            <button class="btn" id="confirmNo">Go back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOG -->
+  <section class="panel" id="p-log" hidden>
+    <div class="card">
+      <div class="monthbar">
+        <button class="btn sm" id="prevMonth" aria-label="Previous month">‹</button>
+        <h2 id="monthLabel"></h2>
+        <button class="btn sm" id="nextMonth" aria-label="Next month">›</button>
+      </div>
+      <div class="stats" id="monthStats"></div>
+      <div class="loglist" id="logList"></div>
+    </div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section class="panel" id="p-settings" hidden>
+    <div class="card">
+      <div><h2>Checklist items</h2><p class="hint" style="margin:4px 0 0">Changes apply to days not yet signed off. Signed-off days keep the list as it was.</p></div>
+      <ul class="edit-list" id="itemEdit"></ul>
+      <p class="empty" id="itemEmpty" hidden>No items yet. Add the first one below.</p>
+      <form class="row" id="addItemForm">
+        <input id="newItem" placeholder="e.g. Set the alarm" style="flex:1;min-width:0;border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:10px 12px">
+        <button class="btn primary" type="submit">Add item</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <div><h2>Admin PIN</h2><p class="hint" style="margin:4px 0 0">Staff without the PIN see only today's Close up page. They can't reopen a signed-off day, change settings or view the log.</p></div>
+      <div class="row"><button class="btn" type="button" id="changePin">Change admin PIN</button></div>
+    </div>
+
+    <div class="card">
+      <div><h2>Extra closed days</h2><p class="hint" style="margin:4px 0 0">The shop is open Tuesday to Saturday. Add bank holidays and other days it stays shut.</p></div>
+      <div id="closureList"></div>
+      <form class="row" id="addClosureForm">
+        <input type="date" id="newClosureDate" required style="border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:9px 10px">
+        <input id="newClosureReason" placeholder="Reason, e.g. Christmas Day" style="flex:1;min-width:140px;border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:10px 12px">
+        <button class="btn primary" type="submit">Add closed day</button>
+      </form>
+    </div>
+  </section>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(function(){
+/* ===== Shared database (Firebase Realtime Database) ===== */
+const DB_URL = "https://closing-log-default-rtdb.europe-west1.firebasedatabase.app";
+const ROOT = "closing-log";
+/* Used only the very first time, when the database has no checklist yet */
+const FIRST_RUN = {"items": [{"id": "display", "text": "Return try-out instruments to their stands or cases"}, {"id": "back", "text": "Check all windows are shut"}, {"id": "52e78rv7", "text": "Take all customer instruments downstairs"}, {"id": "power", "text": "Switch off lights and heating in shop"}, {"id": "0agzc2vi", "text": "Lock shop door"}, {"id": "workshop", "text": "Check workshop to ensure everything is switched off"}, {"id": "6bb4tloy", "text": "Switch off lights and heating downstairs"}, {"id": "alarm", "text": "Set the alarm"}, {"id": "front", "text": "Lock the front door upper lock"}, {"id": "koqbb0k0", "text": "Lock the front door lower lock"}], "closures": {"2026-12-25": "Christmas Day", "2026-12-26": "Christmas closing", "2026-12-29": "Christmas closing", "2026-12-30": "Christmas closing", "2026-12-31": "Christmas closing", "2027-01-01": "New Year's Day"}};
+const $ = s => document.querySelector(s);
+const DAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const pad = n => String(n).padStart(2,"0");
+const iso = d => d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const parse = s => { const [y,m,d] = s.split("-").map(Number); return new Date(y,m-1,d); };
+const addDays = (s,n) => { const d = parse(s); d.setDate(d.getDate()+n); return iso(d); };
+const todayISO = () => iso(new Date());
+const longDate = s => { const d = parse(s); return DAYS[d.getDay()]+" "+d.getDate()+" "+MONTHS[d.getMonth()]+" "+d.getFullYear(); };
+const shortDay = s => DAYS[parse(s).getDay()].slice(0,3);
+const shortDate = s => { const d = parse(s); return pad(d.getDate())+" "+MONTHS[d.getMonth()].slice(0,3); };
+const hhmm = t => { if(!t) return ""; const d = new Date(t); return pad(d.getHours())+":"+pad(d.getMinutes()); };
+const uid = () => Math.random().toString(36).slice(2,10);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+const S = { admin:false, pinHash:"", myId:null, myName:"", items:[], closures:{}, logs:{},
+  selected: todayISO(), tab:"today", month: todayISO().slice(0,7), logStart:"2026-10-21", loaded:{items:false,closures:false,logs:false} };
+
+/* ---------- day logic ---------- */
+function closedReason(d){
+  if (S.closures[d] !== undefined) return S.closures[d] || "Closed";
+  const w = parse(d).getDay();
+  if (w === 0) return "Sunday";
+  if (w === 1) return "Monday";
+  return null;
+}
+function itemsFor(log){
+  if (log && log.signedOffAt && Array.isArray(log.snapshot)) return log.snapshot.map(x => ({id:x.id, text:x.text}));
+  return S.items;
+}
+function doneCount(log, items){
+  const c = (log && log.checks) || {};
+  return items.filter(i => c[i.id]).length;
+}
+function status(d){
+  const log = S.logs[d];
+  const t = todayISO();
+  const closed = closedReason(d);
+  if (log && log.signedOffAt){
+    const items = itemsFor(log), n = doneCount(log, items);
+    return n >= items.length ? {k:"complete", label:"Complete"} : {k:"missed", label:(items.length-n)+" not done"};
+  }
+  if (log && (doneCount(log, S.items) > 0)) return {k:"progress", label:"In progress"};
+  if (closed) return {k:"closed", label:"Closed"};
+  if (d > t) return {k:"upcoming", label:"Upcoming"};
+  if (d < S.logStart) return {k:"closed", label:"Before log began"};
+  if (d === t) return {k:"progress", label:"Not signed off"};
+  return {k:"notlogged", label:"Not logged"};
+}
+const pill = st => `<span class="pill s-${st.k}">${esc(st.label)}</span>`;
+
+/* ---------- saving ---------- */
+const pending = new Map(), inflight = new Set();
+let saveTimer;
+function setSave(txt){ const el = $("#saveState"); el.textContent = txt; clearTimeout(saveTimer); if (txt==="Saved") saveTimer = setTimeout(()=>{ el.textContent=""; }, 2000); }
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const endpoint = p => DB_URL.replace(/\/+$/,"") + "/" + ROOT + (p ? "/" + p : "") + ".json";
+async function write(path, body){
+  setAt(path, body);
+  pending.set(path, body);
+  if (inflight.has(path)) return;
+  inflight.add(path); setSave("Saving…");
+  while (pending.has(path)){
+    const b = pending.get(path); pending.delete(path);
+    for (let tries = 1; ; tries++){
+      try {
+        const r = await fetch(endpoint(path), {method:"PUT", body:JSON.stringify(b)});
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        setOnline(true); break;
+      } catch(e){
+        console.error(e); setOnline(false); setSave("Not saved yet, retrying…");
+        if (pending.has(path)) break;          // a newer change is waiting; send that instead
+        await sleep(Math.min(30000, 2000 * tries));
+      }
+    }
+  }
+  inflight.delete(path); setSave("Saved");
+}
+function editLog(d, fn){
+  const prev = S.logs[d];
+  const body = prev ? JSON.parse(JSON.stringify(prev)) : {date:d, checks:{}, notes:"", closedByName:""};
+  fn(body);
+  body.updatedAt = new Date().toISOString();
+  if (S.myId) body.updatedBy = S.myId;
+  S.logs[d] = body;
+  write("logs/"+d, body);
+  renderAll();
+}
+const saveItems = () => write("config/checklist", {items:S.items});
+const saveClosures = () => write("config/closures", {dates:S.closures});
+
+/* ---------- toast ---------- */
+let tt; function toast(m){ const t=$("#toast"); t.textContent=m; t.hidden=false; clearTimeout(tt); tt=setTimeout(()=>t.hidden=true,4000); }
+
+/* ---------- render: header ---------- */
+function renderHeader(){
+  const t = todayISO();
+  $("#hdrDate").textContent = longDate(t);
+  $("#hdrStatus").innerHTML = (S.loaded.logs ? pill(status(t)) : "");
+}
+
+/* ---------- render: close up ---------- */
+let anywayOpen = {};
+function renderToday(){
+  const d = S.selected, log = S.logs[d], closed = closedReason(d), signed = !!(log && log.signedOffAt);
+  $("#pickDate").value = d;
+  $("#goToday").hidden = d === todayISO();
+
+  // missed-day hint (last 14 days, open days before the selected date)
+  let missed = [];
+  for (let i=1;i<=14;i++){ const x = addDays(todayISO(), -i); if (x >= S.logStart && status(x).k==="notlogged") missed.push(x); }
+  const mh = $("#missedHint");
+  if (S.admin && S.loaded.logs && missed.length && d === todayISO()){
+    mh.hidden = false;
+    mh.innerHTML = `<span>${missed.length===1?"One recent open day wasn't":missed.length+" recent open days weren't"} logged: ${missed.slice(0,3).map(x=>`<a href="#" data-open="${x}">${shortDay(x)} ${shortDate(x)}</a>`).join(", ")}${missed.length>3?"…":""}</span>`;
+  } else mh.hidden = true;
+
+  const showChecklist = !closed || anywayOpen[d] || (log && (log.signedOffAt || doneCount(log,S.items)>0));
+  const cb = $("#closedBanner");
+  if (closed && !signed){
+    cb.hidden = false;
+    cb.innerHTML = `<span><b>Shop closed</b> · ${esc(closed)}</span>` + (showChecklist ? "" : `<button class="btn sm" id="openAnyway">Log a closing anyway</button>`);
+  } else cb.hidden = true;
+
+  const sb = $("#signedBanner");
+  if (signed){
+    sb.hidden = false;
+    sb.innerHTML = `<span><b>Signed off</b> by ${esc(log.closedByName||"someone")} at <span class="mono">${hhmm(log.signedOffAt)}</span>${log.signedOffAt.slice(0,10)!==d?` on ${shortDate(iso(new Date(log.signedOffAt)))}`:""}</span>${S.admin ? `<button class="btn sm" id="reopenBtn">Reopen</button>` : ""}`;
+  } else sb.hidden = true;
+
+  $("#checkCard").hidden = !showChecklist;
+  const items = itemsFor(log), checks = (log && log.checks) || {};
+  const n = doneCount(log, items);
+  $("#countLabel").textContent = items.length ? `${n} of ${items.length}` : "";
+  $("#progBar").style.width = items.length ? (100*n/items.length)+"%" : "0";
+  $("#checkEmpty").hidden = items.length > 0;
+  const ul = $("#checkList");
+  ul.classList.toggle("locked", signed);
+  ul.innerHTML = items.map(it => {
+    const c = checks[it.id];
+    return `<li class="${c?"done":""}"><label><input type="checkbox" data-item="${esc(it.id)}" ${c?"checked":""} ${signed?"disabled":""}><span class="t">${esc(it.text)}</span><span class="at">${c && c.at ? hhmm(c.at) : ""}</span></label></li>`;
+  }).join("");
+
+  const notes = $("#notes");
+  if (document.activeElement !== notes && !notesDirty) notes.value = (log && log.notes) || "";
+  const nm = $("#closedBy");
+  if (document.activeElement !== nm) nm.value = (log && log.closedByName) || defaultName();
+  nm.disabled = signed;
+  notes.disabled = signed && !S.admin;
+
+  $("#signoffBox").hidden = signed || !showChecklist;
+  const left = items.length - n;
+  $("#signoffBtn").textContent = left > 0 ? `Sign off with ${left} item${left>1?"s":""} not done` : "Sign off closing";
+  if (!confirmFor || confirmFor !== d) $("#confirmBox").hidden = true;
+}
+function defaultName(){ try { return localStorage.getItem("closedByName") || S.myName || ""; } catch(e){ return S.myName || ""; } }
+
+/* ---------- render: log ---------- */
+function renderLog(){
+  const [y,m] = S.month.split("-").map(Number);
+  $("#monthLabel").textContent = MONTHS[m-1]+" "+y;
+  const t = todayISO();
+  const last = new Date(y, m, 0).getDate();
+  const rows = []; const tally = {open:0, complete:0, missed:0, notlogged:0};
+  for (let day = last; day >= 1; day--){
+    const d = y+"-"+pad(m)+"-"+pad(day);
+    if (d > t) continue;
+    if (d < S.logStart && !S.logs[d]) continue;
+    const st = status(d), log = S.logs[d], closed = closedReason(d);
+    const regular = closed && S.closures[d] === undefined;
+    if (regular && !log) continue;
+    if (!closed) tally.open++;
+    if (st.k==="complete") tally.complete++;
+    if (st.k==="missed") tally.missed++;
+    if (st.k==="notlogged") tally.notlogged++;
+    const who = log && log.signedOffAt ? `Closed by ${esc(log.closedByName||"—")} · <span class="mono">${hhmm(log.signedOffAt)}</span>` : (closed ? esc(closed) : (st.k==="progress" ? "Started, not signed off" : "No record"));
+    const note = log && log.notes ? `<span class="note">${esc(log.notes.length>140 ? log.notes.slice(0,140)+"…" : log.notes)}</span>` : "";
+    rows.push(`<button class="logrow" data-open="${d}"><span class="d">${shortDate(d)}<small>${shortDay(d)}</small></span><span class="info"><span>${who}</span>${note}</span>${pill(st)}</button>`);
+  }
+  $("#logList").innerHTML = rows.length ? rows.join("") : `<p class="empty">No days to show for this month yet.</p>`;
+  $("#monthStats").innerHTML = `<span>Open days <b>${tally.open}</b></span><span>Complete <b>${tally.complete}</b></span><span>With items not done <b>${tally.missed}</b></span><span>Not logged <b>${tally.notlogged}</b></span>`;
+  $("#nextMonth").disabled = S.month >= t.slice(0,7);
+  $("#prevMonth").disabled = S.month <= S.logStart.slice(0,7);
+}
+
+/* ---------- render: settings ---------- */
+function renderSettings(){
+  const ul = $("#itemEdit");
+  const focusId = document.activeElement && document.activeElement.dataset.edit;
+  ul.innerHTML = S.items.map((it,i) => `<li><span class="n">${i+1}</span><input data-edit="${esc(it.id)}" id="edit-${esc(it.id)}" value="${esc(it.text)}" aria-label="Checklist item ${i+1}"><span class="acts"><button class="iconbtn" data-up="${i}" aria-label="Move up" ${i===0?"disabled":""}>↑</button><button class="iconbtn" data-down="${i}" aria-label="Move down" ${i===S.items.length-1?"disabled":""}>↓</button><button class="iconbtn" data-del="${i}" aria-label="Remove">✕</button></span></li>`).join("");
+  if (focusId){ const el = document.getElementById("edit-"+focusId); if (el) el.focus(); }
+  $("#itemEmpty").hidden = S.items.length > 0;
+  const t = todayISO();
+  const ds = Object.keys(S.closures).sort();
+  const upcoming = ds.filter(d => d >= t), past = ds.filter(d => d < t).reverse().slice(0,10);
+  const row = d => `<div class="closure"><span class="mono">${shortDay(d)} ${shortDate(d)} ${d.slice(0,4)}</span><span class="reason">${esc(S.closures[d]||"Closed")}</span><button class="btn sm ghost danger" data-unclose="${d}">Remove</button></div>`;
+  $("#closureList").innerHTML = (upcoming.length ? upcoming.map(row).join("") : `<p class="empty">No upcoming closed days added.</p>`) + (past.length ? `<p class="hint" style="margin:10px 0 0">Recent past</p>`+past.map(row).join("") : "");
+}
+
+function renderAll(){
+  renderHeader();
+  if (S.tab==="today") renderToday();
+  if (S.tab==="log") renderLog();
+  if (S.tab==="settings") renderSettings();
+}
+function setTab(tab){
+  S.tab = tab;
+  document.querySelectorAll("nav.tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.tab===tab));
+  ["today","log","settings"].forEach(p => $("#p-"+p).hidden = p!==tab);
+  renderAll();
+}
+function openDay(d){ S.selected = d; setTab("today"); window.scrollTo({top:0}); }
+
+/* ---------- events ---------- */
+document.querySelector("nav.tabs").addEventListener("click", e => { const b = e.target.closest("button[data-tab]"); if (b) setTab(b.dataset.tab); });
+document.addEventListener("click", e => {
+  const o = e.target.closest("[data-open]"); if (o){ e.preventDefault(); openDay(o.dataset.open); return; }
+  const g = e.target.closest("[data-goto]"); if (g){ e.preventDefault(); setTab(g.dataset.goto); return; }
+  if (e.target.id === "openAnyway"){ anywayOpen[S.selected] = true; renderToday(); }
+  if (e.target.id === "reopenBtn" && S.admin){ editLog(S.selected, b => { delete b.signedOffAt; delete b.signedOffBy; delete b.snapshot; }); }
+});
+$("#prevDay").onclick = () => { S.selected = addDays(S.selected,-1); renderToday(); };
+$("#nextDay").onclick = () => { S.selected = addDays(S.selected,1); renderToday(); };
+$("#goToday").onclick = () => { S.selected = todayISO(); renderToday(); };
+$("#pickDate").onchange = e => { if (e.target.value){ S.selected = e.target.value; renderToday(); } };
+
+$("#checkList").addEventListener("change", e => {
+  const id = e.target.dataset.item; if (!id) return;
+  const on = e.target.checked;
+  editLog(S.selected, b => { b.checks = b.checks || {}; if (on) b.checks[id] = {at:new Date().toISOString()}; else delete b.checks[id]; });
+});
+
+let notesDirty = false, notesTimer;
+$("#notes").addEventListener("input", () => { notesDirty = true; clearTimeout(notesTimer); notesTimer = setTimeout(flushNotes, 800); });
+$("#notes").addEventListener("blur", flushNotes);
+function flushNotes(){
+  clearTimeout(notesTimer);
+  if (!notesDirty) return; notesDirty = false;
+  const v = $("#notes").value, d = S.selected;
+  if (((S.logs[d]||{}).notes||"") === v) return;
+  editLog(d, b => { b.notes = v; });
+}
+$("#closedBy").addEventListener("change", e => {
+  const v = e.target.value.trim();
+  try { localStorage.setItem("closedByName", v); } catch(_){}
+  if (S.logs[S.selected]) editLog(S.selected, b => { b.closedByName = v; });
+});
+
+let confirmFor = null;
+function signOff(){
+  const d = S.selected;
+  const name = $("#closedBy").value.trim();
+  if (!name){ toast("Add your name under Closed by, then sign off."); $("#closedBy").focus(); return; }
+  try { localStorage.setItem("closedByName", name); } catch(_){}
+  flushNotes();
+  confirmFor = null; $("#confirmBox").hidden = true;
+  editLog(d, b => {
+    b.closedByName = name;
+    b.signedOffAt = new Date().toISOString();
+    if (S.myId) b.signedOffBy = S.myId;
+    b.snapshot = S.items.map(i => ({id:i.id, text:i.text}));
+    b.notes = $("#notes").value;
+  });
+}
+$("#signoffBtn").onclick = () => {
+  const log = S.logs[S.selected], items = S.items, left = items.length - doneCount(log, items);
+  if (left > 0){
+    const missing = items.filter(i => !((log&&log.checks)||{})[i.id]).map(i => esc(i.text));
+    $("#confirmText").innerHTML = `These aren't ticked: <b>${missing.join("</b>, <b>")}</b>. Add a note saying why if you can.` + (S.admin ? "" : " Once signed off, only an admin can reopen this day.");
+    confirmFor = S.selected; $("#confirmBox").hidden = false;
+  } else if (!S.admin){
+    $("#confirmText").innerHTML = `Are you sure you want to sign off closing for <b>${esc(longDate(S.selected))}</b>? Once signed off, only an admin can reopen it.`;
+    confirmFor = S.selected; $("#confirmBox").hidden = false;
+  } else signOff();
+};
+$("#confirmYes").onclick = signOff;
+$("#confirmNo").onclick = () => { confirmFor = null; $("#confirmBox").hidden = true; };
+
+$("#prevMonth").onclick = () => { const [y,m]=S.month.split("-").map(Number); const d=new Date(y,m-2,1); S.month=d.getFullYear()+"-"+pad(d.getMonth()+1); renderLog(); };
+$("#nextMonth").onclick = () => { const [y,m]=S.month.split("-").map(Number); const d=new Date(y,m,1); S.month=d.getFullYear()+"-"+pad(d.getMonth()+1); renderLog(); };
+
+$("#addItemForm").onsubmit = e => { e.preventDefault(); const v=$("#newItem").value.trim(); if(!v) return; S.items = [...S.items, {id:uid(), text:v}]; $("#newItem").value=""; saveItems(); renderSettings(); };
+$("#itemEdit").addEventListener("change", e => { const id=e.target.dataset.edit; if(!id) return; const v=e.target.value.trim(); if(!v) return renderSettings(); S.items = S.items.map(i => i.id===id ? {...i, text:v} : i); saveItems(); });
+$("#itemEdit").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  const a = [...S.items];
+  if (b.dataset.up){ const i=+b.dataset.up; [a[i-1],a[i]]=[a[i],a[i-1]]; }
+  else if (b.dataset.down){ const i=+b.dataset.down; [a[i+1],a[i]]=[a[i],a[i+1]]; }
+  else if (b.dataset.del){ a.splice(+b.dataset.del,1); }
+  else return;
+  S.items = a; saveItems(); renderSettings();
+});
+$("#addClosureForm").onsubmit = e => { e.preventDefault(); const d=$("#newClosureDate").value; if(!d) return; S.closures = {...S.closures, [d]: $("#newClosureReason").value.trim() || "Closed"}; $("#newClosureDate").value=""; $("#newClosureReason").value=""; saveClosures(); renderSettings(); };
+$("#closureList").addEventListener("click", e => { const b=e.target.closest("[data-unclose]"); if(!b) return; const c={...S.closures}; delete c[b.dataset.unclose]; S.closures=c; saveClosures(); renderSettings(); });
+
+// roll the date over if the page is left open past midnight
+let lastToday = todayISO();
+setInterval(() => { const t = todayISO(); if (t !== lastToday){ if (S.selected === lastToday) S.selected = t; lastToday = t; renderAll(); } }, 60000);
+
+/* ---------- admin access ---------- */
+async function hashPin(pin){
+  const data = new TextEncoder().encode("closing-log:" + pin);
+  const buf = await crypto.subtle.digest("SHA-256", data);
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,"0")).join("");
+}
+function storedAdmin(){ try { return localStorage.getItem("adminKey") || ""; } catch(e){ return ""; } }
+function applyRole(){
+  const was = S.admin;
+  S.admin = !!S.pinHash && storedAdmin() === S.pinHash;
+  document.body.classList.toggle("admin", S.admin);
+  $("#adminBtn").textContent = S.admin ? "Lock admin" : "Admin";
+  if (!S.admin && (was || S.tab !== "today" || S.selected !== todayISO())){ S.selected = todayISO(); if (S.tab !== "today") setTab("today"); }
+}
+let pinMode = "unlock";
+function openPinForm(mode){
+  pinMode = mode;
+  const setting = mode !== "unlock";
+  $("#adminTitle").textContent = mode === "unlock" ? "Admin access" : (mode === "set" ? "Set an admin PIN" : "Change admin PIN");
+  $("#adminHint").textContent = mode === "set" ? "No admin PIN has been set yet. Choose one with at least 4 digits. Anyone without it gets the staff view." : (mode === "change" ? "Choose a new PIN with at least 4 digits. Other admin phones will need the new PIN." : "Enter the admin PIN to see the log and settings on this phone.");
+  $("#pinLabel").textContent = setting ? "New PIN" : "Admin PIN";
+  $("#pin2Field").hidden = !setting;
+  $("#pinSubmit").textContent = setting ? "Save PIN" : "Unlock";
+  $("#pinInput").value = ""; $("#pin2Input").value = ""; $("#pinError").textContent = "";
+  $("#adminForm").hidden = false; $("#pinInput").focus();
+}
+$("#adminBtn").onclick = () => {
+  if (S.admin){ try { localStorage.removeItem("adminKey"); } catch(e){} applyRole(); renderAll(); toast("Admin locked. This phone now shows the staff view."); return; }
+  if (!S.loaded.items){ toast("Still connecting to the log. Try again in a moment."); return; }
+  openPinForm(S.pinHash ? "unlock" : "set");
+};
+$("#changePin").onclick = () => { window.scrollTo({top:0}); openPinForm("change"); };
+$("#pinCancel").onclick = () => { $("#adminForm").hidden = true; };
+$("#adminForm").onsubmit = async e => {
+  e.preventDefault();
+  const pin = $("#pinInput").value.trim(), err = $("#pinError");
+  if (pinMode === "unlock"){
+    if ((await hashPin(pin)) !== S.pinHash){ err.textContent = "That PIN isn't right. Try again."; $("#pinInput").select(); return; }
+  } else {
+    if (!/^\d{4,}$/.test(pin)){ err.textContent = "Use at least 4 digits, numbers only."; return; }
+    if (pin !== $("#pin2Input").value.trim()){ err.textContent = "The two PINs don't match."; return; }
+    S.pinHash = await hashPin(pin);
+    write("config/admin", {pinHash:S.pinHash});
+  }
+  try { localStorage.setItem("adminKey", S.pinHash); } catch(e){}
+  $("#adminForm").hidden = true;
+  applyRole(); renderAll();
+  toast(pinMode === "unlock" ? "Admin unlocked on this phone." : "Admin PIN saved. Admin is unlocked on this phone.");
+};
+
+/* ---------- boot ---------- */
+renderAll();
+/* local copy of the database tree */
+let T = {};
+function setAt(path, val){
+  const seg = path.split("/").filter(Boolean);
+  if (!seg.length){ T = (val && typeof val === "object") ? val : {}; return; }
+  let o = T;
+  for (let i = 0; i < seg.length - 1; i++){ if (!o[seg[i]] || typeof o[seg[i]] !== "object") o[seg[i]] = {}; o = o[seg[i]]; }
+  const k = seg[seg.length-1];
+  if (val === null || val === undefined) delete o[k]; else o[k] = val;
+}
+const asArray = v => Array.isArray(v) ? v.filter(Boolean) : (v && typeof v === "object" ? Object.keys(v).sort((a,b)=>a-b).map(k => v[k]).filter(Boolean) : []);
+const busy = p => pending.has(p) || inflight.has(p);
+let seeded = false;
+function fromTree(){
+  const cfg = T.config || {};
+  if (!busy("config/checklist")) S.items = asArray(cfg.checklist && cfg.checklist.items).map(i => ({id:String(i.id), text:String(i.text||"")}));
+  if (!busy("config/closures")) S.closures = (cfg.closures && cfg.closures.dates) || {};
+  if (!busy("config/admin")) S.pinHash = (cfg.admin && cfg.admin.pinHash) || "";
+  applyRole();
+  const logs = T.logs || {}, next = {};
+  for (const d of Object.keys(logs)){
+    const l = logs[d]; if (!l || typeof l !== "object") continue;
+    next[d] = Object.assign({}, l, {checks: l.checks || {}, snapshot: l.snapshot ? asArray(l.snapshot) : undefined});
+  }
+  for (const p of [...pending.keys(), ...inflight]) if (p.startsWith("logs/")){ const d = p.slice(5); if (S.logs[d]) next[d] = S.logs[d]; }
+  S.logs = next;
+  S.loaded.items = S.loaded.closures = S.loaded.logs = true;
+  if (!seeded && !(cfg.checklist && cfg.checklist.items)){
+    seeded = true;
+    S.items = FIRST_RUN.items; saveItems();
+    if (!(cfg.closures && cfg.closures.dates)){ S.closures = FIRST_RUN.closures; saveClosures(); }
+  }
+  seeded = true;
+  renderAll();
+}
+function setOnline(ok){
+  const n = $("#globalNotice");
+  if (ok){ if (n.dataset.kind === "offline") n.hidden = true; }
+  else { n.dataset.kind = "offline"; n.textContent = "No connection to the shared log. Ticks and notes are kept on this phone and saved when the connection returns."; n.hidden = false; }
+}
+async function pull(){
+  try {
+    const r = await fetch(endpoint(""), {cache:"no-store"});
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    T = (await r.json()) || {}; setOnline(true); fromTree();
+  } catch(e){ console.error(e); setOnline(false); }
+}
+function stream(){
+  if (!window.EventSource) return;
+  const es = new EventSource(endpoint(""));
+  es.addEventListener("put", e => { const m = JSON.parse(e.data); setAt(m.path, m.data); setOnline(true); fromTree(); });
+  es.addEventListener("patch", e => { const m = JSON.parse(e.data); for (const k of Object.keys(m.data||{})) setAt((m.path.replace(/\/$/,"")) + "/" + k, m.data[k]); setOnline(true); fromTree(); });
+  es.addEventListener("keep-alive", () => setOnline(true));
+  es.onerror = () => { if (!navigator.onLine) setOnline(false); };
+}
+if (!/^https:\/\/.+/.test(DB_URL)){
+  $("#globalNotice").textContent = "This copy isn't connected to a database yet.";
+  $("#globalNotice").hidden = false;
+} else {
+  pull().then(stream);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) pull(); });
+  window.addEventListener("online", pull);
+  setInterval(() => { if (!document.hidden) pull(); }, 60000);
+}
+function showNotice(m){ const n=$("#globalNotice"); n.textContent=m; n.hidden=false; }
+})();
+</script>
+</body>
+</html>
