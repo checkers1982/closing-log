@@ -594,7 +594,8 @@ function openPinForm(mode){
   $("#pinInput").value = ""; $("#pin2Input").value = ""; $("#pinError").textContent = "";
   $("#adminForm").hidden = false; $("#pinInput").focus();
 }
-$("#adminBtn").onclick = () => {
+$("#adminBtn").onclick = async () => {
+  if (!S.admin) await pull();                         // always decide "set" vs "unlock" from the latest shared data
   if (S.admin){ try { localStorage.removeItem("adminKey"); } catch(e){} applyRole(); renderAll(); toast("Admin locked. This phone now shows the staff view."); return; }
   if (!S.loaded.items){ toast("Still connecting to the log. Try again in a moment."); return; }
   openPinForm(S.pinHash ? "unlock" : "set");
@@ -605,7 +606,11 @@ $("#adminForm").onsubmit = async e => {
   e.preventDefault();
   const pin = $("#pinInput").value.trim(), err = $("#pinError");
   if (pinMode === "unlock"){
-    if ((await hashPin(pin)) !== S.pinHash){ err.textContent = "That PIN isn't right. Try again."; $("#pinInput").select(); return; }
+    if ((await hashPin(pin)) !== S.pinHash){
+      await pull();                                   // re-check the shared PIN in case this phone's copy is out of date
+      if (!S.pinHash){ openPinForm("set"); return; }
+      if ((await hashPin(pin)) !== S.pinHash){ err.textContent = "That PIN isn't right. Try again."; $("#pinInput").select(); return; }
+    }
   } else {
     if (!/^\d{4,}$/.test(pin)){ err.textContent = "Use at least 4 digits, numbers only."; return; }
     if (pin !== $("#pin2Input").value.trim()){ err.textContent = "The two PINs don't match."; return; }
